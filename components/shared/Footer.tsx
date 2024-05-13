@@ -59,7 +59,7 @@ const Footer: React.FC = () => {
             autoPlay
             muted
             loop
-            src="/elemental.mp4"
+            src="/foot.mp4"
           ></video>
           <div className="wrap" style={{ position: "relative", width: "100%", zIndex: 6, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
             <h1 style={{ fontSize: "80px", lineHeight: "100%", textAlign: "center", margin: "3% 0 1%" }}>Have <br /> <span style={{ fontSize: "70px", fontStyle: "italic", textAlign: "center", fontWeight: 200 }}>any Idea ?</span></h1>
