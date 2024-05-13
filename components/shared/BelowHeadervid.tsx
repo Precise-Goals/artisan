@@ -4,7 +4,6 @@ import { Application } from "@splinetool/runtime";
 import Products from "./imagescraousel";
 
 const BelowHeadervid = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const canvas = document.getElementById("canvas3d") as HTMLCanvasElement;
@@ -14,36 +13,7 @@ const BelowHeadervid = () => {
     } else {
       console.error("Canvas element not found");
     }
-  }, []); // Empty dependency array ensures this effect runs only once after the initial render
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (videoRef.current) {
-        const video = videoRef.current;
-        const parentDiv = video.parentElement;
-        if (parentDiv) {
-          const parentRect = parentDiv.getBoundingClientRect();
-          const videoRect = video.getBoundingClientRect();
-          const halfParentHeight = parentRect.top + parentRect.height / 2;
-          const halfVideoHeight = videoRect.height / 2;
-          if (window.scrollY > halfParentHeight - halfVideoHeight) {
-            if (video.paused) {
-              video.play();
-            }
-          } else {
-            if (!video.paused) {
-              video.pause();
-            }
-          }
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  }, []); 
 
   return (
     <section>
@@ -52,9 +22,8 @@ const BelowHeadervid = () => {
         style={{ background: "transparent", width: "100vw", height: "100vh" }}
       >
         <video
-          ref={videoRef}
           className="viddd"
-          src="/compresed.mp4"
+          src="/compresed1.mp4"
           autoPlay
           loop
           muted

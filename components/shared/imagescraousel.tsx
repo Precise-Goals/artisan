@@ -14,7 +14,7 @@ const Products = () => {
   
   return (
     <div className="products" style={{ padding: "5% 6%", position: "relative", background: "#09090b" }}>
-      <video src="/prylx.mp4" autoPlay loop muted></video>
+      {/* <video src="/prylx.mp4" autoPlay loop muted></video> */}
       <h1 style={{ fontSize: "50px", position: "relative", zIndex: "4", width: "100%", textAlign: "center" }}>
         Best Selling Products
       </h1>
