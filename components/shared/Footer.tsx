@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
             </li>
           </ul>
         </div>
-        <Follow />
+        {/* <Follow /> */}
         <div className="butt" style={{ position: "relative", zIndex: 2, overflow: "hidden" }}>
           <video
             style={{
