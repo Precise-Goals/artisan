@@ -2,6 +2,7 @@ import { motion, useAnimation } from "framer-motion";
 import Image from "next/image";
 import { useEffect } from "react";
 import { MouseParallax } from "react-just-parallax";
+import { Application } from "@splinetool/runtime";
 
 const staggerVariants = {
   visible: {
@@ -42,6 +43,13 @@ const HeroSection = () => {
     };
 
     restartAnimation();
+    const canvas = document.getElementById("canvas2d") as HTMLCanvasElement;
+    if (canvas) {
+      const app = new Application(canvas);
+      app.load('https://prod.spline.design/fvdHJDjBhCOpPZUU/scene.splinecode');
+    } else {
+      console.error("Canvas element not found");
+    }
   }, []);
 
   return (
@@ -80,7 +88,10 @@ const HeroSection = () => {
         <motion.p className="text-xl italic w-1/3 text-white/60 py-4">
           We are the top notch Jewelry store we Shop with us right now
         </motion.p>
-        <motion.button className="px-14 py-6 text-xl border-2 rounded-full redbtn" data-cursor-text="SHOP NOW">
+        <motion.button
+          className="px-14 py-6 text-xl border-2 rounded-full redbtn"
+          data-cursor-text="SHOP NOW"
+        >
           <span className="spani">SHOP NOW</span>
         </motion.button>
       </motion.div>
@@ -103,29 +114,16 @@ const HeroSection = () => {
             },
           }}
         >
-          <div className="flex flex-col items-center justify-center ">
+          <div
+            className="flex flex-col items-center justify-center"
+            style={{ width: "600px", background: "#09090b", height: "600px" }}
+          >
             <MouseParallax strength={0.01}>
-              <Image
-                src="/heroimg.png"
-                style={{width:"auto",height:"auto"}}
-                alt=""
-                width={400}
-                height={400}
-                className="md:mb-4"
-                loading="lazy"
-                />
-            </MouseParallax>
-
-            <MouseParallax strength={0.05}>
-              <Image
-                src="/herosubimg.png"
-                style={{width:"auto",height:"auto"}}
-                alt=""
-                width={200}
-                height={300}
-                className="absolute right-0 bottom-0 rounded-lg"
-                loading="lazy"
-              />
+              <canvas
+                style={{ cursor: "grab", background: "#09090b" }}
+                id="canvas2d"
+                height="100%" width="100%"
+              ></canvas>
             </MouseParallax>
           </div>
         </motion.div>
