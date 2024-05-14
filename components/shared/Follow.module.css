@@ -1,0 +1,68 @@
+.followWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.marqueeContainer {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.marquee {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.groupMark {
+  margin-top: 20px;
+}
+
+.marqueeGroup ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+}
+
+.marqueeGroup ul li {
+  display: inline-block;
+  margin-right: 20px;
+  cursor: pointer;
+  transition: color 0.3s;
+  position: relative;
+}
+
+.marqueeGroup ul li.active {
+  color: white;
+  background-color: #09090b; /* Change color on hover */
+}
+
+.marqueeHover {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee 10s linear infinite;
+}
+
+.reverse {
+  animation-direction: reverse;
+}
+
+.marqueeHover span {
+  margin-right: 20px;
+}
+.Follow_active__0SWvt{
+  background-color: white;
+  width: 100%;
+}

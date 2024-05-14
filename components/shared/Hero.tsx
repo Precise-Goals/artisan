@@ -46,7 +46,7 @@ const HeroSection = () => {
     const canvas = document.getElementById("canvas2d") as HTMLCanvasElement;
     if (canvas) {
       const app = new Application(canvas);
-      app.load('https://prod.spline.design/fvdHJDjBhCOpPZUU/scene.splinecode');
+      app.load("https://prod.spline.design/fvdHJDjBhCOpPZUU/scene.splinecode");
     } else {
       console.error("Canvas element not found");
     }
@@ -116,13 +116,14 @@ const HeroSection = () => {
         >
           <div
             className="flex flex-col items-center justify-center"
-            style={{ width: "600px", background: "#09090b", height: "600px" }}
+            style={{ width: "600px", background: "#09090b", height: "500px" }}
           >
             <MouseParallax strength={0.01}>
               <canvas
                 style={{ cursor: "grab", background: "#09090b" }}
                 id="canvas2d"
-                height="100%" width="100%"
+                height="100%"
+                width="100%"
               ></canvas>
             </MouseParallax>
           </div>

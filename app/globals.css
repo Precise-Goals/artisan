@@ -446,3 +446,59 @@ h4.heeed {
 .marqgrp li{
   cursor: pointer;
 }
+
+.Follow_marquee__m5U1x {
+  font-size: 80px;
+  font-style: italic;
+  column-gap: 10%;
+  padding: 1%;
+}
+
+.Follow_groupMark__YuM7P ul {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.Follow_groupMark__YuM7P h4 {
+  font-size: 25px;
+  margin: 1% 5% 1%;
+}
+
+.Follow_marqueeGroup__q9lNz {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.Follow_groupMark__YuM7P {
+  width: 100%;
+}
+
+.Follow_marqueeGroup__q9lNz ul li {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding: 0 5%;
+  border-top: 1px solid white;
+}
+.Follow_marqueeGroup__q9lNz ul li span {
+  font-size: 40px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.Follow_marqueeHover__VVQ_h {
+  height: 100%;
+  background-color: azure;
+  color: black;
+}
+.Follow_marqueeGroup__q9lNz{
+  background-color: white;
+}
