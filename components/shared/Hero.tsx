@@ -61,7 +61,7 @@ const HeroSection = () => {
           <motion.span variants={charVariants}>We</motion.span>{" "}
           <motion.span variants={charVariants}>are</motion.span>
           <motion.video
-            src="/compresed.mp4"
+            src="/compresed1.mp4"
             width={130}
             height={200}
             className="rounded-full mx-9 inline-block"
@@ -107,17 +107,19 @@ const HeroSection = () => {
             <MouseParallax strength={0.01}>
               <Image
                 src="/heroimg.png"
+                style={{width:"auto",height:"auto"}}
                 alt=""
                 width={400}
                 height={400}
                 className="md:mb-4"
                 loading="lazy"
-              />
+                />
             </MouseParallax>
 
             <MouseParallax strength={0.05}>
               <Image
                 src="/herosubimg.png"
+                style={{width:"auto",height:"auto"}}
                 alt=""
                 width={200}
                 height={300}

@@ -11,14 +11,47 @@ const Products = () => {
       once: false, // animate only once
     });
   }, []);
-  
+
   return (
-    <div className="products" style={{ padding: "5% 6%", position: "relative", background: "#09090b" }}>
+    <div
+      className="products"
+      style={{ padding: "5% 6%", position: "relative", background: "#09090b" }}
+    >
       {/* <video src="/prylx.mp4" autoPlay loop muted></video> */}
-      <h1 style={{ fontSize: "50px", position: "relative", zIndex: "4", width: "100%", textAlign: "center" }}>
-        Best Selling Products
+      <h1
+        style={{
+          position: "relative",
+          zIndex: "4",
+          width: "100%",
+          lineHeight:"3rem",
+          textAlign: "center",
+        }}
+      >
+        <span
+          style={{
+            fontSize: "60px",
+            letterSpacing: "0.01rem",
+            fontStyle: "italic",
+          }}
+        >
+          BEST SELLING
+        </span>
+        <br />{" "}
+        <p
+          style={{
+            fontSize: "75px",
+            fontStretch: "extra-condensed",
+            fontStyle: "italic",
+            fontWeight: "200",
+          }}
+        >
+          PRODUCTS
+        </p>
       </h1>
-      <div className="imgcontainer" style={{ position: "relative", zIndex: "4" }}>
+      <div
+        className="imgcontainer"
+        style={{ position: "relative", zIndex: "4" }}
+      >
         <div className="r">
           {[1, 4, 5, 2, 3].map((num) => (
             <LazyLoadedImage key={`img-${num}`} num={num} />
