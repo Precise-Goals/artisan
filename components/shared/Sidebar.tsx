@@ -13,14 +13,14 @@ const Sidebar = ({ isOpen, onClose }: any) => {
         duration: 0.2,
         x: "0%",
         ease: "power4.inOut",
-        stagger: 1,
+        stagger: .1,
       });
     } else {
       gsap.to(sidebarRef.current, {
         duration: 0.2,
         x: "100%",
         ease: "power4.in",
-        stagger: 4,
+        stagger: .1,
       });
     }
   }, [isOpen]);

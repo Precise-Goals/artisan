@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState, useCallback } from "react";
 import styles from "./Follow.module.css";
 
@@ -12,7 +12,6 @@ const Follow: React.FC = () => {
   const handleMouseOut = useCallback(() => {
     setHoverIndex(null);
   }, []);
-
   return (
     <div className={styles.followWrapper}>
       <div className={styles.marqueeContainer}>
@@ -44,18 +43,42 @@ const Follow: React.FC = () => {
                       index === 1 ? styles.reverse : ""
                     }`}
                   >
-                    <span>{`${social} ${index === 1 ? "ㅤ→ㅤ" : "ㅤ←ㅤ"}`}</span>
-                    <span>{`${social} ${index === 1 ? "ㅤ→ㅤ" : "ㅤ←ㅤ"}`}</span>
-                    <span>{`${social} ${index === 1 ? "ㅤ→ㅤ" : "ㅤ←ㅤ"}`}</span>
-                    <span>{`${social} ${index === 1 ? "ㅤ→ㅤ" : "ㅤ←ㅤ"}`}</span>
-                    <span>{`${social} ${index === 1 ? "ㅤ→ㅤ" : "ㅤ←ㅤ"}`}</span>
-                    <span>{`${social} ${index === 1 ? "ㅤ→ㅤ" : "ㅤ←ㅤ"}`}</span>
-                    <span>{`${social} ${index === 1 ? "ㅤ→ㅤ" : "ㅤ←ㅤ"}`}</span>
-                    <span>{`${social} ${index === 1 ? "ㅤ→ㅤ" : "ㅤ←ㅤ"}`}</span>
-                    <span>{`${social} ${index === 1 ? "ㅤ→ㅤ" : "ㅤ←ㅤ"}`}</span>
-                    <span>{`${social} ${index === 1 ? "ㅤ→ㅤ" : "ㅤ←ㅤ"}`}</span>
-                    <span>{`${social} ${index === 1 ? "ㅤ→ㅤ" : "ㅤ←ㅤ"}`}</span>
-                    <span>{`${social} ${index === 1 ? "ㅤ→ㅤ" : "ㅤ←ㅤ"}`}</span>
+                    <span>{`${social} ${
+                      index === 1 ? "ㅤ→ㅤ" : "ㅤ←ㅤ"
+                    }`}</span>
+                    <span>{`${social} ${
+                      index === 1 ? "ㅤ→ㅤ" : "ㅤ←ㅤ"
+                    }`}</span>
+                    <span>{`${social} ${
+                      index === 1 ? "ㅤ→ㅤ" : "ㅤ←ㅤ"
+                    }`}</span>
+                    <span>{`${social} ${
+                      index === 1 ? "ㅤ→ㅤ" : "ㅤ←ㅤ"
+                    }`}</span>
+                    <span>{`${social} ${
+                      index === 1 ? "ㅤ→ㅤ" : "ㅤ←ㅤ"
+                    }`}</span>
+                    <span>{`${social} ${
+                      index === 1 ? "ㅤ→ㅤ" : "ㅤ←ㅤ"
+                    }`}</span>
+                    <span>{`${social} ${
+                      index === 1 ? "ㅤ→ㅤ" : "ㅤ←ㅤ"
+                    }`}</span>
+                    <span>{`${social} ${
+                      index === 1 ? "ㅤ→ㅤ" : "ㅤ←ㅤ"
+                    }`}</span>
+                    <span>{`${social} ${
+                      index === 1 ? "ㅤ→ㅤ" : "ㅤ←ㅤ"
+                    }`}</span>
+                    <span>{`${social} ${
+                      index === 1 ? "ㅤ→ㅤ" : "ㅤ←ㅤ"
+                    }`}</span>
+                    <span>{`${social} ${
+                      index === 1 ? "ㅤ→ㅤ" : "ㅤ←ㅤ"
+                    }`}</span>
+                    <span>{`${social} ${
+                      index === 1 ? "ㅤ→ㅤ" : "ㅤ←ㅤ"
+                    }`}</span>
                   </div>
                 ) : (
                   <span

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useEffect, useRef } from "react";
 import Swiper from "swiper";
 import "swiper/css/pagination";
@@ -21,9 +21,12 @@ const Products: React.FC<ProductsProps> = () => {
   ];
 
   const containerRef = useRef<HTMLDivElement>(null);
+  const swiperRef = useRef<Swiper | null>(null); // Ref for Swiper instance
 
   useEffect(() => {
-    const swiper = new Swiper(containerRef.current!, {
+    if (!containerRef.current || swiperRef.current) return;
+
+    const swiper = new Swiper(containerRef.current, {
       slidesPerView: 4,
       loop: true,
       freeMode: true,
@@ -33,19 +36,22 @@ const Products: React.FC<ProductsProps> = () => {
       navigation: true,
       pagination: {
         clickable: true,
-        dynamicBullets:true,
+        dynamicBullets: true,
       },
       autoplay: {
         delay: 1000,
         disableOnInteraction: false,
       },
-      modules: [Autoplay,Pagination],
+      modules: [Autoplay, Pagination],
     });
 
+    swiperRef.current = swiper; // Save swiper instance to the ref
+
     return () => {
-      swiper.destroy(true, true);
+      swiperRef.current?.destroy(true, true); // Destroy swiper instance on unmount
+      swiperRef.current = null; // Reset swiper ref
     };
-  }, []);
+  }, []); // Empty dependency array ensures this effect runs only once
 
   return (
     <div className="products">
@@ -59,12 +65,6 @@ const Products: React.FC<ProductsProps> = () => {
           {images.map((image, index) => (
             <div
               key={index}
-              style={{
-                width: "400px",
-                justifyContent: "center",
-                alignItems: "center",
-                display: "flex",
-              }}
               className="swiper-slide"
             >
               <img src={image.src} width={400} height={400} alt={image.alt} />

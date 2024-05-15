@@ -1,30 +1,7 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { InfiniteMovingCards } from "../ui/infinite-moving-cards";
-
-export function InfiniteMovingCardsDemo() {
-  return (
-    <>
-      <div
-        style={{ padding: "3%",zoom:"92%",position:"relative",zIndex:"5",background:"#09090b"}}
-        className=" rounded-md flex flex-col antialiased bg-zinc-950 dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden"
-      >
-        <h1 className="text-5xl mb-10">Our Testimonials and Reviews</h1>
-        <InfiniteMovingCards
-          items={testimonials}
-          direction="right"
-          speed="slow"
-        />
-        <InfiniteMovingCards
-          items={testimonials}
-          direction="left"
-          speed="slow"
-        />
-      </div>
-    </>
-  );
-}
 
 const testimonials = [
   {
@@ -57,3 +34,15 @@ const testimonials = [
     title: "Moby-Dick",
   },
 ];
+
+export function InfiniteMovingCardsDemo() {
+  return (
+    <div style={{ padding: "3%", zoom: "92%", position: "relative", zIndex: "5", background: "#09090b" }} className="rounded-md flex flex-col antialiased bg-zinc-950 dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+      <h1 className="text-5xl mb-10">Our Testimonials and Reviews</h1>
+      <InfiniteMovingCards items={testimonials} direction="right" speed="slow" />
+      <InfiniteMovingCards items={testimonials} direction="left" speed="slow" />
+    </div>
+  );
+}
+
+export default InfiniteMovingCardsDemo;
