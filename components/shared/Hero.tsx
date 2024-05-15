@@ -1,8 +1,8 @@
 import { motion, useAnimation } from "framer-motion";
-import Image from "next/image";
-import { useEffect } from "react";
-import { MouseParallax } from "react-just-parallax";
+import { useEffect, useRef } from "react";
 import { Application } from "@splinetool/runtime";
+import { MouseParallax } from "react-just-parallax";
+import Spline from "@splinetool/react-spline";
 
 const staggerVariants = {
   visible: {
@@ -35,7 +35,7 @@ const charVariants = {
 
 const HeroSection = () => {
   const controls = useAnimation();
-
+  const splineRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const restartAnimation = async () => {
       await controls.start("hidden");
@@ -43,12 +43,8 @@ const HeroSection = () => {
     };
 
     restartAnimation();
-    const canvas = document.getElementById("canvas2d") as HTMLCanvasElement;
-    if (canvas) {
-      const app = new Application(canvas);
-      app.load("https://prod.spline.design/fvdHJDjBhCOpPZUU/scene.splinecode");
-    } else {
-      console.error("Canvas element not found");
+    if (splineRef.current) {
+      splineRef.current.style.overflow = "hidden";
     }
   }, []);
 
@@ -58,7 +54,8 @@ const HeroSection = () => {
       className="relative flex w-full items-start justify-center h-[100vh] py-12 px-16"
     >
       <motion.div
-        className="flex flex-col absolute w-full items-start overflow-hidden justify-center h-[100vh] py-12 px-16"
+        style={{ marginLeft: "10%" }}
+        className="lm flex flex-col absolute w-full items-start overflow-hidden justify-center h-[100vh] py-12 px-16"
         initial={{
           opacity: 0,
         }}
@@ -96,7 +93,10 @@ const HeroSection = () => {
         </motion.button>
       </motion.div>
 
-      <div className="w-full absolute flex items-center justify-end px-32 right-0 h-full">
+      <div
+        className="w-full absolute flex items-center justify-end px-32 right-0 h-full"
+        style={{ padding: "0% 15%" }}
+      >
         <motion.div
           className="relative"
           initial={{
@@ -115,16 +115,15 @@ const HeroSection = () => {
           }}
         >
           <div
-            className="flex flex-col items-center justify-center"
-            style={{ width: "600px", background: "#09090b", height: "500px" }}
+            className="splin flex flex-col items-center justify-center"
+            ref={splineRef}
+            style={{ width: "400px", background: "#09090b", height: "475px" }}
           >
-            <MouseParallax strength={0.01}>
-              <canvas
-                style={{ cursor: "grab", background: "#09090b" }}
-                id="canvas2d"
-                height="100%"
-                width="100%"
-              ></canvas>
+            <MouseParallax strength={0.05}>
+              <Spline
+                style={{ cursor: "grab", height: "100%", width: "100%" }}
+                scene="https://prod.spline.design/fvdHJDjBhCOpPZUU/scene.splinecode"
+              />
             </MouseParallax>
           </div>
         </motion.div>

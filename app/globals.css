@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -68,12 +68,13 @@
   }
 }
 
-.item{
+.item {
   width: auto;
   height: auto;
 }
 * {
   scroll-behavior: smooth;
+  transition: all 0.5s ease-in-out;
 }
 @layer base {
   * {
@@ -179,7 +180,7 @@
   border-radius: 4rem 4rem 4rem 4rem;
   transition: all 0.5s ease-out;
 }
-html{
+html {
   scroll-behavior: smooth;
 }
 .redbtn:hover:before {
@@ -363,22 +364,7 @@ video.viddd {
   position: fixed;
   top: 0;
 }
-.imgcontainer {
-  width: 100%;
-  display: flex;
-  column-gap: 10%;
-  padding: 7% 5%;
-  justify-content: center;
-  align-items: center;
-}
-.r,
-.l {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  row-gap: 5rem;
-  justify-content: center;
-}
+
 .reveal {
   transform: translateY(90px);
   opacity: 0;
@@ -394,11 +380,6 @@ video.viddd {
   margin-bottom: 20%;
 }
 
-.item {
-  box-shadow: 0 0 9rem 4rem #cc834917;
-  border-radius: 2rem;
-  width: 400px;
-}
 .products video {
   position: absolute;
   z-index: 1;
@@ -412,7 +393,16 @@ span.bachaa {
   align-items: center;
   justify-content: center;
 }
-.word{
+
+.l-howee button {
+  font-size: 41px;
+  margin-top: 3rem;
+  font-stretch: condensed;
+  letter-spacing: 1px;
+  padding: 5% 10%;
+}
+
+.word {
   height: 100px;
   display: flex;
   font-size: 40px;
@@ -421,7 +411,7 @@ span.bachaa {
   border-top: 1px solid white;
   align-items: center;
   cursor: pointer;
-  transition: all ease .5s;
+  transition: all ease 0.5s;
 }
 h4.heeed {
   font-size: 25px;
@@ -431,19 +421,19 @@ h4.heeed {
   transition: opacity 0.5s ease-in-out;
 }
 
-.bacha.marqgrp li{
+.bacha.marqgrp li {
   transition: opacity 0.5s ease-in-out;
   opacity: 0;
 }
-.word{
+.word {
   transition: opacity 0.5s ease-in-out;
   opacity: 1;
 }
-.bacha li:hover  {
+.bacha li:hover {
   transition: opacity 0.5s ease-in-out;
   opacity: 1;
 }
-.marqgrp li{
+.marqgrp li {
   cursor: pointer;
 }
 
@@ -499,6 +489,115 @@ h4.heeed {
   background-color: azure;
   color: black;
 }
-.Follow_marqueeGroup__q9lNz{
+
+.Follow_marqueeGroup__q9lNz {
   background-color: white;
+}
+/* Add this to your CSS file */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+* {
+  scroll-behavior: smooth;
+  transition: all 0.5s ease-in-out;
+}
+.App {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+canvas {
+  display: block;
+}
+
+
+
+
+
+
+
+
+
+
+/* Base styles */
+.products {
+  padding: 2% 0%;
+  position: relative;
+  background: #09090b;
+}
+
+.products h1 {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  padding: 0 10%;
+  text-align: center;
+  margin: 3% 0 1%;
+  line-height: 1.75rem;
+  color: #fff;
+}
+
+.products h1 span {
+  font-size: 80px;
+  letter-spacing: 0.01rem;
+  width: 100%;
+  display: flex;
+  font-style: italic;
+}
+
+.products h1 p {
+  font-size: 75px;
+  width: 100%;
+  margin: 1% 0% 4%; /* Adjusted margin */
+  text-align: start;
+  font-stretch: extra-condensed;
+  font-style: italic;
+  font-weight: 200;
+}
+
+.imgcontainer {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  cursor: grab;
+  user-select: none;
+}
+
+.imgcontainer:active {
+  cursor: grabbing;
+}
+
+/* Marquee animation */
+.swiper-wrapper {
+  display: flex;
+  white-space: nowrap;
+}
+.swiper-slide{
+  position: relative;
+}
+@keyframes mar {
+  0%{
+    transform: translateX(0px);
+  }
+  100%{
+    transform: translateX(-50%);
+  }
+}
+
+.item {
+  flex: 0 0 auto;
+  margin-right: 20px;
+  position: relative;
+  width: 400px;
+  height: 400px;
 }

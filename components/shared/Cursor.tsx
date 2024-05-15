@@ -53,7 +53,7 @@ const Cursor = () => {
     }
 
     return () => {
-      cursor.destroy(); // Clean up when component unmounts
+      cursor.destroy;// Clean up when component unmounts
     };
   }, []);
 
