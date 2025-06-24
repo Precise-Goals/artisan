@@ -28,7 +28,7 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        <SmoothScroll>{children}</SmoothScroll>
+        {children}
       </body>
     </html>
   );
